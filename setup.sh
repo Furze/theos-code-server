@@ -42,3 +42,5 @@ popd
 mkdir -p $THEOS/toolchain/linux/iphone
 rsync -a $TMP/ios-arm64e-clang-toolchain/* $THEOS/toolchain/linux/iphone/
 rm -rf $TMP linux-ios-arm64e-clang-toolchain.tar.lzma
+
+popd
