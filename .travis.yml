@@ -1,6 +1,0 @@
-arch: amd64
-language: c
-compiler: gcc
-services:
-  - docker
-script: docker build -t theos-code-server/arm64 -f Dockerfile .
