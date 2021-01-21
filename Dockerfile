@@ -51,4 +51,3 @@ RUN rsync -a /arm64eToolchain/ios-arm64e-clang-toolchain/* $THEOS/toolchain/linu
 RUN apt-get purge --yes --autoremove $BUILD_DEPS
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
-
