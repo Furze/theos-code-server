@@ -18,9 +18,9 @@ WORKDIR /opt/theos
 RUN git submodule update --init --recursive
 
 WORKDIR /opt
-RUN git clone https://github.com/kabiroberai/ios-toolchain-linux.git toolchain
-
+RUN git clone https://github.com/kabiroberai/darwin-tools-linux.git toolchain
 WORKDIR /opt/toolchain
+RUN git submodule update --init --recursive
 RUN ./prepare-toolchain
 RUN cp /usr/lib/llvm-6.0/lib/libLTO.so* staging/linux/iphone/lib/
 RUN mv staging/linux ../theos/toolchain/
@@ -51,5 +51,3 @@ RUN rsync -a /arm64eToolchain/ios-arm64e-clang-toolchain/* $THEOS/toolchain/linu
 RUN apt-get purge --yes --autoremove $BUILD_DEPS
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
-
-
